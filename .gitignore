@@ -1,0 +1,8 @@
+# Sensitive Information files
+constants.py
+
+# Ignore Python bytecode files
+__pycache__/
+
+# Ignore Cached Data
+user_cache.json
