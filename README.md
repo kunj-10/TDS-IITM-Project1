@@ -1,7 +1,7 @@
 # TDS-IITM-Project1
 
 #### Project overview
-The aim of this project was to use GITHUB API to scrape all scrape all users in the city of Zurich with over 50 followers, and their repositories to analyze trends and insights within the collected data. 
+The aim of this project was to use the GitHub API to scrape all users in the city of Zurich with over 50 followers and their repositories. This data was analyzed to identify trends and insights. 
 
 ***Before use***: Add your personal github auth token to 'constants.py' in variable 'GIT_AUTH_TOKEN'
 
@@ -22,12 +22,19 @@ The aim of this project was to use GITHUB API to scrape all scrape all users in 
     - Employing various pandas and sklearn functionalities, such as *LinearRegression* from *sklearn.linear_model*, to analyze the data and answer specific research questions.
 
 #### Endpoints used:
-- '(https://api.github.com/search/users?q=location:Zurich+followers:>50)': to search for the users in zurich with over 50 followers
+The following GitHub API endpoints were used for data retrieval:
+- 'https://api.github.com/search/users?q=location:Zurich+followers:>50': to search for the users in zurich with over 50 followers
+- 'https://api.github.com/users/{USERNAME}': to get the details of individual users
+- 'https://api.github.com/users/{user_login}/repos?per_page=100': to get the repositories associated with a user
 
 ## Findings
 
 ### Interesting Fact
-During data analysis, it was surprising to find that some popular repositories had minimal stars, while lesser-known projects sometimes garnered significant attention.
+- During data analysis, it was surprising to find that some popular repositories had minimal stars, while lesser-known projects sometimes garnered significant attention.
+-  Also it was interesting to find how Python is the single largest language used in Zurich and how in more recent repositories Javascript has grown to become the second largest language used
 
-### Recommendation for Developers
-Keep repository documentation clear and up-to-date. Projects with descriptive READMEs and well-maintained documentation attract more followers and contributors.
+### Recommendations for Developers
+1. **Focus on Public Repositories**: To increase follower count, developers should consider maintaining and promoting their public repositories, as more repositories are positively associated with higher follower counts.
+2. **Enhance Project and Wiki Features**: Enabling project and wiki features may attract more followers, given the observed correlation.
+3. **Optimize Bio Content**: Developers should craft informative bios, as word count in bios appears to significantly influence follower growth. Clear and engaging bios may lead to increased interest in their projects.
+4. **Keep Documentation Clear and Up-to-Date**: Projects with descriptive READMEs and well-maintained documentation attract more followers and contributors.
