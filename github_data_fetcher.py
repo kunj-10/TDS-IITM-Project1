@@ -50,8 +50,32 @@ def get_users():
     print(f"Total users fetched: {len(response_cache)}")
     return response_cache
 
-# if response_cache:
-#     print(response_cache[0])  # Print the first user's details for Debugging
+# def get_repos(user_login):
+#     repo_url = f'https://api.github.com/users/{user_login}/repos?per_page=100'
+#     page = 1
+#     all_repos = []
+
+#     while True:
+#         curr_url = repo_url + f'&page={page}'
+#         response = requests.get(curr_url, headers=headers)
+#         if response.status_code == 200:
+#             data = response.json()
+#             if not data:
+#                 break
+#             all_repos.extend(data)
+#         else:
+#             print(f"Error fetching data for {user_login} at page: {page}, Error Code: {response.status_code}")
+        
+#         page += 1
+    
+#     all_repos.sort(key=lambda x: x['pushed_at'], reverse=True)
+
+#     for repo in all_repos[:500]:
+#         repo_info = {
+#             'login': repo['login'],
+#             ''
+#         }
+
 
 # # Uncomment to check current rate limit
 # response = requests.get("https://api.github.com/rate_limit", headers=headers)
