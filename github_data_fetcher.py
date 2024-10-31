@@ -50,31 +50,28 @@ def get_users():
     print(f"Total users fetched: {len(response_cache)}")
     return response_cache
 
-# def get_repos(user_login):
-#     repo_url = f'https://api.github.com/users/{user_login}/repos?per_page=100'
-#     page = 1
-#     all_repos = []
+def get_repos(user_login):
+    repo_url = f'https://api.github.com/users/{user_login}/repos?per_page=100'
+    page = 1
+    all_repos = []
 
-#     while True:
-#         curr_url = repo_url + f'&page={page}'
-#         response = requests.get(curr_url, headers=headers)
-#         if response.status_code == 200:
-#             data = response.json()
-#             if not data:
-#                 break
-#             all_repos.extend(data)
-#         else:
-#             print(f"Error fetching data for {user_login} at page: {page}, Error Code: {response.status_code}")
+    while True:
+        curr_url = repo_url + f'&page={page}'
+        print(curr_url)
+        response = requests.get(curr_url, headers=headers)
+        if response.status_code == 200:
+            data = response.json()
+            if not data:
+                break
+            all_repos.extend(data)
+        else:
+            print(f"Error fetching data for {user_login} at page: {page}, Error Code: {response.status_code}")
         
-#         page += 1
+        page += 1
     
-#     all_repos.sort(key=lambda x: x['pushed_at'], reverse=True)
+    all_repos.sort(key=lambda x: x['pushed_at'] or '1900-01-01T00:00:00Z', reverse=True)
 
-#     for repo in all_repos[:500]:
-#         repo_info = {
-#             'login': repo['login'],
-#             ''
-#         }
+    return all_repos
 
 
 # # Uncomment to check current rate limit
