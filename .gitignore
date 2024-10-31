@@ -6,3 +6,6 @@ __pycache__/
 
 # Ignore Cached Data
 user_cache.json
+
+# Ignore Jupyter Checkpoints
+.ipynb_checkpoints/
