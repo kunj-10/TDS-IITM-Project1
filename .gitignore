@@ -1,3 +1,6 @@
+# Sensitive Information files
+constants.py
+
 # Ignore Python bytecode files
 __pycache__/
 
