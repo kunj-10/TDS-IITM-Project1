@@ -30,7 +30,7 @@ The following GitHub API endpoints were used for data retrieval:
 ## Findings
 
 ### Interesting Fact
-- During data analysis, it was surprising to find that some popular repositories had minimal stars, while lesser-known projects sometimes garnered significant attention.
+- During data analysis, it was surprising to find that the programming language **BitBake** had the highest average number of stars among repositories, suggesting a niche interest that may not correlate with the popularity of the repositories themselves.
 -  Also it was interesting to find how Python is the single largest language used in Zurich and how in more recent repositories Javascript has grown to become the second largest language used
 
 ### Recommendations for Developers
